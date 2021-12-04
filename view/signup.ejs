@@ -1,0 +1,25 @@
+
+<%- include('./includes/_header.ejs') %>
+<% if (еrrorMessage) { %>
+<div class="greska"><%= еrrorMessage %></div>
+<% } %>
+<div class="direkciite">
+    <h2 class="naslov naslov2"><%= naslov %></h2>
+</div>
+
+<div class="container">
+    <form action="/signup" method="POST">
+      <label for="ime">Име</label>
+      <input type="text" id="ime" name="ime"><br><br>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>"><br><br>
+
+      <label for="password">Лозинка</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+<%- include('./includes/_footer.ejs') %>

@@ -1,0 +1,291 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: Verdana, Geneva, Tahoma;
+  line-height: 1.6;
+}
+
+.naslov {
+  padding-bottom: 3rem;
+  padding-left: 5rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+.naslov2 {
+  padding-top: 1em;
+}
+
+.rastojanie {
+  margin-top: 2.5rem;
+}
+
+.direkciite,
+.container {
+  padding-bottom: 3rem;
+  padding-left: 5rem;
+  font-size: 1.6rem;
+  max-width: 120rem;
+  min-width: 80rem;
+  margin: 25px auto;
+  border-radius: 0.5rem;
+}
+
+.skrieno {
+  display: none;
+}
+
+.logo,
+.brzi_linkovi,
+.animacija {
+  font-size: 1.6rem;
+  max-width: 120rem;
+  min-width: 80rem;
+}
+
+.animacija {
+  margin: 25px auto;
+  border-radius: 0.5rem;
+  display: flex;
+  height: 60rem;
+  overflow: hidden;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+.item--1 {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.897), rgba(255, 255, 255, 0.753)), url(./src_01.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 102rem;
+  transition: width 200ms ease-out;
+}
+.item--2 {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.877), rgba(255, 255, 255, 0.719)), url(./src_02.jpg);
+  background-size: cover;
+  background-position: right;
+  width: 6rem;
+  transition: width 200ms ease-out;
+}
+.item--3 {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.877), rgba(255, 255, 255, 0.719)), url(./src_03.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 6rem;
+  transition: width 200ms ease-out;
+}
+.item--4 {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.877), rgba(255, 255, 255, 0.719)), url(./src_04.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 6rem;
+  transition: width 200ms ease-out;
+}
+
+.prvoo {
+  display: none;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  background-image: linear-gradient(to bottom, rgba(31, 82, 160, 0.897), rgba(11, 13, 59, 0.932));
+  z-index: 1;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+.prvoo--meni {
+  align-self: flex-start;
+  justify-self: flex-start;
+  padding-top: 6rem;
+  padding-left: 2.35rem;
+  font-size: 2rem;
+  line-height: 1.3;
+  color: #fff;
+}
+.prvoo--meni div {
+  font-weight: 600;
+}
+
+.vtoroo {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  background-image: linear-gradient(to right bottom, rgba(170, 3, 3, 0.945), rgba(255, 71, 71, 0.822));
+  z-index: 1;
+  color: #fff;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+.vtoroo--meni {
+  align-self: flex-start;
+  justify-self: flex-start;
+  padding-top: 6rem;
+  padding-left: 2.35rem;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+.vtoroo--meni div {
+  font-weight: 600;
+}
+
+.tretoo {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  background-image: linear-gradient(to bottom, rgba(16, 165, 128, 0.897), rgba(8, 92, 81, 0.89));
+  z-index: 1;
+  color: #fff;
+  transition: all 200ms ease-out;
+  overflow: none;
+  cursor: pointer;
+}
+.tretoo--meni {
+  align-self: flex-start;
+  justify-self: flex-start;
+  padding-top: 6rem;
+  padding-left: 2.35rem;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+.tretoo--meni div {
+  font-weight: 600;
+}
+
+.cetvrtoo {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  background-image: linear-gradient(to right bottom, rgba(8, 17, 100, 0.945), rgba(77, 139, 180, 0.822));
+  z-index: 1;
+  color: #fff;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+.cetvrtoo--meni {
+  align-self: flex-start;
+  justify-self: flex-start;
+  padding-top: 6rem;
+  padding-left: 2.35rem;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+.cetvrtoo--meni div {
+  font-weight: 600;
+}
+
+.sec {
+  display: grid;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.zaedno {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.6rem;
+}
+
+.direkcija {
+  display: flex;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0.5rem 0.3rem;
+  width: 15rem;
+  height: 7rem;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  line-height: 1.2;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+  transition: all 200ms;
+  cursor: pointer;
+}
+
+.direkcii {
+  padding: 2rem 2rem;
+}
+
+.brzi_linkovi {
+  margin: 25px auto;
+  border-top: #004282 solid 1px;
+  padding: 2.5rem 0;
+}
+.brzi_linkovi--zaedno {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+.brzi_linkovi--element {
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(to bottom, rgba(24, 34, 124, 0.945), rgba(43, 108, 161, 0.822));
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+.brzi_linkovi--element:link, .brzi_linkovi--element:visited {
+  color: #ffffff;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.192);
+  transition: all 200ms;
+}
+.brzi_linkovi--element:hover {
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.192);
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, rgba(43, 108, 161, 0.822), rgba(24, 34, 124, 0.945));
+  transform: translateY(-3px);
+}
+.brzi_linkovi--element:active {
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.192);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #004282;
+  padding-bottom: 1rem;
+  margin: 10px auto;
+}
+.logo--l {
+  width: 20rem;
+}
+
+.meni--glavno {
+  list-style: none;
+}
+.meni--li {
+  display: inline-block;
+}
+.meni--element {
+  text-decoration: none;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+.meni--element:link, .meni--element:visited {
+  color: #004282;
+  transition: all 200ms;
+}
+.meni--element:hover {
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.192);
+  color: #004282;
+  transform: translateY(-3px);
+}
+.meni--element:active {
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.192);
+  color: #004282;
+  transform: translateY(-1px);
+}
+.doc {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */

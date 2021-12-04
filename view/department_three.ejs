@@ -1,0 +1,132 @@
+
+<%- include('./includes/_header.ejs') %>
+
+
+<div class="direkciite">
+    <h2 class="naslov naslov2"><%= naslov %></h2>
+
+        <button class="accordion">Процедури</button>
+        <div class="panel">
+                <% for (let product of prods_bn_p) { %>
+                    <div>
+                        <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                    </div> 
+                <% } %>
+
+            <% for (let product of prods_bn_p_p) { %>
+                <div>
+                    <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+            <h4 class="cetvrt">Критериуми</h4>
+            <% for (let product of prods_bn_p_k) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+            <h4 class="cetvrt">Кредитни картички</h4>
+            <% for (let product of prods_bn_p_k_k) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div> </div>
+            <h4 class="cetvrt">Формулари за преддоговорни информации</h4>
+            <% for (let product of prods_bn_p_fpi) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+                <h4 class="cetvrt">Општи услови Кроација</h4>
+                <% for (let product of prods_bn_p_kro) { %>
+                    <div>
+                    <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                    </div> 
+                <% } %>
+
+        </div>
+    
+    
+    
+    
+    
+        <button class="accordion">Работни инструкции</button>
+        <div class="panel">
+            <% for (let product of prods_bn_i) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+
+        </div>
+    
+    
+    
+        <button class="accordion">Упатства</button>
+        <div class="panel">
+            <% for (let product of prods_bn_u) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+
+        </div>
+    
+    
+    
+    
+        <button class="accordion">Оперативни документи</button>
+        <div class="panel">
+            <% for (let product of prods_bn_o_d) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+            <h4 class="cetvrt">Документи за дозволено пречекорување</h4>
+            <% for (let product of prods_bn_o_d_d_p) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+            <h4 class="cetvrt">Документи за кредити</h4>
+            <% for (let product of prods_bn_o_d_d_k) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+            <h4 class="cetvrt">Налози и записи за примопредавање на досиеја</h4>
+            <% for (let product of prods_bn_o_d_nal) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+            <h4 class="cetvrt">Чекинг листи</h4>
+            <% for (let product of prods_bn_o_d_c_l) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>
+            <div></div>
+            <h4 class="cetvrt">КРЕДИТНИ КАРТИЧКИ</h4>
+            <% for (let product of prods_bn_o_d_k_k) { %>
+                <div>
+                <a class="doc" href="<%= product.link %>" target="blank"><%= product.title %></a>
+                </div> 
+            <% } %>   
+  
+        </div>
+    
+
+    
+</div>
+
+
+<%- include('./includes/_footer.ejs') %>
+

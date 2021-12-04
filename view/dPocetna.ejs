@@ -1,0 +1,44 @@
+<%- include('./includes/_header.ejs') %>
+  
+    
+<% if (еrrorMessage.length > 0) { %>
+    <div id="myModal_greska" class="modal_greska">
+        <div class="modal-content_greska"><p><%= еrrorMessage %></p></div>
+    </div><% } %>
+
+<% if (izvestuvanje.length > 0) { %>
+    <div id="myModal" class="modal">
+        <div class="modal-content"><p><%= izvestuvanje %></p></div>
+    </div>
+<% } %>  
+
+
+    <div class="animacija">
+
+
+        <div id="eden" class="item item--1">
+            
+          <div class="sec">
+              <div class="direkcii d-prva">
+                  <h2 class="naslov">Section 1</h2>
+                  <div class="zaedno">
+                      <% for (let i of isprati) { %>
+
+                            <a href="/d/<%= i._id %>" class="direkcija meni--element"><%= i.imeKirilica %></a>
+
+                    <% } %>
+                      
+                  </div>
+              </div>
+          </div>
+          </div>
+
+       
+    </div>
+
+
+
+    <%- include('./includes/_footer.ejs') %>
+
+    <script src="/css/js.js"></script>
+

@@ -1,0 +1,21 @@
+
+<%- include('./includes/_header.ejs') %>
+
+
+<div class="direkciite">
+    <h2 class="naslov naslov2"><%= naslov %></h2>
+</div>
+
+<div class="container">
+    <form action="/new_file/<%= oddel %>" method="POST" enctype="multipart/form-data">
+      <label for="title">Текст за линкот</label>
+      <input type="text" id="title" name="title" required><br><br>
+      <label for="dokument">Документ</label>
+      <input type="file" id="dokument" name="dokument" required><br><br>
+      <input type="hidden" name="oddel" value="<%= oddel %>"><br><br>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+<%- include('./includes/_footer.ejs') %>

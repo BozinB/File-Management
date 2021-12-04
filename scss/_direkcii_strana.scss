@@ -1,0 +1,30 @@
+.podnaslov_1 {
+    font-size: 1.8rem;
+    padding-bottom: 1.2rem;
+    padding-top: 1.2rem;
+    padding-left: 1rem;
+    text-transform: uppercase;
+    border-left: 1rem solid rgb(187, 14, 14);
+}
+.cetvrt {
+    font-size: 1.6rem;
+   text-transform: uppercase;
+   padding-left: 4rem;
+   padding-top: 1.2rem;
+}
+.doc {
+    text-decoration: none;
+    padding-left: 4rem;
+    padding-top: 1.5rem;
+
+    &:visited,
+    &:link {
+        color: $boja;
+        transition: all 200ms;
+    }
+
+    &:hover {
+        color: rgb(189, 79, 79);
+     transform: translateX(3px);
+    }
+}

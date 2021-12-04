@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= naslov %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+
+</head>
+<body class="container">
+    <header class="logo">    
+        <a href="/"> <span class="logoF folder" alt="logo"> </span></a>
+
+    </header>
+    
+    <% if (Logiran) { %>
+        <div class="za_user">
+            <div class="za_user--ime">Администратор: <%= user.ime %></div>
+            <ul class="meni--glavno">                
+                <li class="meni--li"><a href="/department" class="meni--element">Администрација на документи</a> </li>
+                <li class="meni--li"><a href="/signup" class="meni--element">Нов user</a> </li>
+                <li class="meni--li"><a href="/logout" class="meni--element">Одјави се</a> </li>
+            </ul>
+        </div>
+    <% } %>   
+   
+

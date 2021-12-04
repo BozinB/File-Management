@@ -1,0 +1,4 @@
+sudo kill -9 $(sudo lsof -t -i:3000)
+
+https://askubuntu.com/questions/1233186/ubuntu-20-04-how-to-set-lower-ssl-security-level
+

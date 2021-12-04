@@ -1,0 +1,114 @@
+
+<%- include('./includes/_header.ejs') %>
+<% if (еrrorMessage.length) { %>
+<div class="greska"><%= еrrorMessage %></div>
+<% } %>
+<!-- <div class="direkciite">
+    <h2 class="naslov naslov2"><%= naslov %></h2>
+</div> -->
+
+<div class="modal hidden">
+  <button class="close-modal">&times;</button> 
+
+
+    <div class="polovina_2">
+
+      <h3 class="doluu">Ве молиме пополнете ги сите полиња</h3>
+      <div class="form__group">
+        <p class="crveno hidden" name='crveno_1'>Ве молиме пополнете го ова поле</p>
+        <input class="form__input" type="text" id="imeKirilica" name="imeKirilica" placeholder="Внесето го името на одделот со кирилична поддршка" required="true">
+        <label class="form__label" for="title_24">Внесето го името на одделот со кирилична поддршка</label>
+      </div>
+
+
+      <div class="form__group">
+        <p class="crveno hidden" name='postoi'>Постои категорија со ова име, ве молиме одберете друго име</p>
+        <p class="crveno hidden" name='crveno_2'>Ве молиме пополнете го ова поле со латинични карактери</p>
+        <input class="form__input" type="text" id="imeLatinica" name="imeLatinica" placeholder="Внесете латиничен назив за одделот" required="true">
+        <label class="form__label" for="imeLatinica">Внесете латиничен назив за одделот</label>
+      </div>
+    </div> 
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="hidden"  name="oddel" >
+    <button style="font-size: 2rem" type="button" name="dugme_isprati" onclick="addMainCategory(this)" class="brzi_linkovi--element brzi_linkovi--brzi">Испрати</button>
+</div>
+<div class="overlay hidden"></div>
+
+
+<div class="glaven_kontejner" name="glaven_kontejner">
+  <button style="font-size: 2rem" type="button" class="brzi_linkovi--element brzi_linkovi--brzi gore" onclick="openModal(this)">Додај главна категорија</button>
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <input  type="hidden"  name="oddel" value="null">
+
+
+  <%
+  let markup = '';
+      const htmlTreeBuilder = (isprati, ii) => {
+      for (let product of isprati){
+          if ( ii === 1) {
+              markup += `
+  <article class="glaven">
+    <div class="glaven-kontejner-prvo">
+      <span class="hH3" name="naslov">${product.imeKirilica}</span>
+      <input  type="hidden"  name="imeKirilica" value="${product.imeKirilica}">
+      <input  type="hidden"  name="imeLatinica" value="${product.imeLatinica}">
+      <input  type="hidden"  name="oddel" value="${product._id}">
+      <button title="Креирајте нова подкатегорија" type="button" onclick="openModal(this, this.parentNode.querySelector('[name=oddel]').value)" class="dDugme newFolder"></button>
+      <button title="Избриши ја категоријата" type="button" onclick="brisiDepartment(this, this.parentNode.querySelector('[name=oddel]').value)" class="dDugme brisi"></button>
+      <button type="button" title="Изменете ја категоријата" onclick="openModal(this, this.parentNode.querySelector('[name=oddel]').value, this.parentNode.querySelector('[name=imeKirilica]').value, this.parentNode.querySelector('[name=imeLatinica]').value)" class="dDugme edit"></button>`
+      
+    } else {
+      markup += `
+      <div class="ostanati">
+        <span class="hH4" name="naslov">${product.imeKirilica}</span>
+        <input  type="hidden"  name="imeKirilica" value="${product.imeKirilica}">
+        <input  type="hidden"  name="imeLatinica" value="${product.imeLatinica}">
+        <input  type="hidden"  name="oddel" value="${product._id}">
+        <button title="Креирајте нова подкатегорија" type="button" onclick="openModal(this, this.parentNode.querySelector('[name=oddel]').value)" class="dDugme newFolder"></button>
+        <button title="Избриши ја категоријата" type="button" onclick="brisiDepartment(this, this.parentNode.querySelector('[name=oddel]').value)" class="dDugme brisi"></button>
+        <button title="Изменете ја категоријата" type="button" onclick="openModal(this, this.parentNode.querySelector('[name=oddel]').value, this.parentNode.querySelector('[name=imeKirilica]').value, this.parentNode.querySelector('[name=imeLatinica]').value)" class="dDugme edit"></button>
+          <button type="button" title="Додај нов документ" onclick="newFile(this, this.parentNode.querySelector('[name=oddel]').value)" class="dDugme file"></button>`
+          }
+          if (product.files.length) {
+              for (let product2 of product.files) { 
+                  markup += `
+          <div>
+            <div class="volinija"><a href="${product2.link}" class="dokument_b">${product2.title}</a></div>
+            <button title="Избриши го документот" type="button" onclick="brisiDokument(this, this.parentNode.querySelector('[name=oddel]').value)" class="dDugme brisi"></button>
+            <button title="Измени го документот" type="button" onclick="editFile(this, this.parentNode.querySelector('[name=oddel]').value)" class="dDugme edit"></button>
+            <input  type="hidden"  name="oddel" value="${product2.id}">
+          </div>` 
+              } 
+          }
+          // Children
+      if (product.children.length) {
+          htmlTreeBuilder(product.children, 2);
+      }
+      
+      if ( ii === 1) {
+          markup += `
+          </article>`
+      } else {
+        markup += `
+          </div>`
+      }
+
+      }
+      //console.log('===========================================', markup)
+      return markup
+  
+      
+  }
+  htmlTreeBuilder(isprati, 1)
+  
+  
+  %>
+  
+  <%- markup %>
+  
+  
+
+<%- include('./includes/_footer.ejs') %>
+
+
+<script src="/css/edit.js"></script>
